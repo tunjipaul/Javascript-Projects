@@ -1,0 +1,159 @@
+*{
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background: #EFF5D2;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+
+    h1, h2 {
+      text-align: center;
+      color: #243507;
+    }
+
+    .search-bar {
+      max-width: 400px;
+      margin: auto;
+      display: flex;
+    }
+
+    .search-bar input {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #658236;
+      border-radius: 8px;
+      margin: 10px;
+    }
+    .search-bar input:hover{
+      background-color: #c9ffde;
+    }
+
+    .menu-section {
+      margin: 30px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .menu-section h2{
+      color: #335005;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 0;
+      font-weight: 600;
+    }
+
+    .card {
+      background: #f0f1ed;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      padding: 15px;
+      border-left: 2px solid rgb(150, 215, 53);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      /* border: 1px solid red; */
+      color: #133e19;
+    }
+
+    .card p {
+      font-size: 14px;
+      margin: 0 0 10px;
+    }
+
+    .card .price {
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .card button {
+      background: #4b5800;
+      color: white;
+      border: none;
+      padding: 8px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .card button:hover {
+      background: #0a582a;
+    }
+
+    /* Cart styling */
+    #cart {
+      max-width: 600px;
+      margin: 40px auto;
+      background: #f0f1ed;
+      padding: 20px;
+      border-right: 4px solid rgb(113, 183, 9);
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(14, 2, 2, 0.1);
+    }
+    #cart h2{
+      color: #314b07;
+    }
+
+    #cart ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    #cart ul li {
+      padding: 6px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    #checkoutForm {
+      margin-top: 20px;
+    }
+
+    #checkoutForm label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+
+    #checkoutForm input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    #checkoutForm input:hover{
+      background-color: #cee7d1;
+    }
+
+    #checkoutForm button {
+      background: #0b5829;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 6px;
+      margin-top: 15px;
+      cursor: pointer;
+    }
+
+    #checkoutForm button:hover {
+      background: #0f7a1f;
+    }
+
+    #confirmation {
+      margin-top: 20px;
+      padding: 15px;
+      background: #d4edda;
+      color: #155724;
+      border-radius: 8px;
+      display: none;
+    }

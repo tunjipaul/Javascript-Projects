@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customer Menu</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="shortcut icon"
+      href="image/android-chrome-192x192.png"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <h1> <i class="fa-solid fa-utensils"></i>>Welcome to FreshBite Café</h1>
+
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search for an item..." />
+    </div>
+
+    <div class="menu-section">
+      <h2>Drinks</h2>
+      <div class="menu-grid" id="drinks"></div>
+    </div>
+
+    <div class="menu-section">
+      <h2>Food</h2>
+      <div class="menu-grid" id="food"></div>
+    </div>
+
+    <div class="menu-section">
+      <h2>Desserts</h2>
+      <div class="menu-grid" id="desserts"></div>
+    </div>
+
+    <!-- Cart -->
+    <div id="cart">
+      <h2>Your Cart</h2>
+      <ul id="cartItems"></ul>
+      <p><strong>Total:</strong> $<span id="cartTotal">0.00</span></p>
+
+      <form id="checkoutForm">
+        <label for="custName">Your Name:</label>
+        <input type="text" id="custName" required />
+
+        <label for="tableNum">Table Number:</label>
+        <input type="number" id="tableNum" required />
+
+        <button type="submit">Place Order</button>
+      </form>
+
+      <div id="confirmation"></div>
+    </div>
+  </body>
+</html>

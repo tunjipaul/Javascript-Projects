@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Staff Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f7fb;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+
+    section {
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 600px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      margin-top: 0;
+      color: #34495e;
+    }
+
+    form label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background: #3498db;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #2980b9;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      background: #ecf0f1;
+      padding: 10px;
+      margin: 5px 0;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Staff Dashboard</h1>
+
+  <!-- Add new menu item -->
+  <section>
+    <h2>Add New Menu Item</h2>
+    <form>
+      <label>
+        Name:
+        <input type="text" name="name" required>
+      </label>
+      <label>
+        Price:
+        <input type="number" name="price" step="0.01" required>
+      </label>
+      <label>
+        Description:
+        <textarea name="description"></textarea>
+      </label>
+      <button type="submit">Add Item</button>
+    </form>
+  </section>
+
+  <!-- Remove existing menu item -->
+  <section>
+    <h2>Remove Menu Item</h2>
+    <form>
+      <label>
+        Select Item to Remove:
+        <select name="removeItem">
+          <option>Pizza</option>
+          <option>Burger</option>
+          <option>Pasta</option>
+        </select>
+      </label>
+      <button type="submit">Remove</button>
+    </form>
+  </section>
+
+  <!-- View all current menu items -->
+  <section>
+    <h2>Current Menu Items</h2>
+    <ul>
+      <li>Pizza - $10.00</li>
+      <li>Burger - $8.00</li>
+      <li>Pasta - $12.00</li>
+    </ul>
+  </section>
+
+  <!-- Edit prices -->
+  <section>
+    <h2>Edit Prices</h2>
+    <form>
+      <label>
+        Select Item:
+        <select name="editItem">
+          <option>Pizza</option>
+          <option>Burger</option>
+          <option>Pasta</option>
+        </select>
+      </label>
+      <label>
+        New Price:
+        <input type="number" name="newPrice" step="0.01">
+      </label>
+      <button type="submit">Update Price</button>
+    </form>
+  </section>
+</body>
+</html>
