@@ -86,14 +86,14 @@ const logoutBtn = document.getElementById("logoutBtn");
 if (logoutBtn) {
   logoutBtn.addEventListener("click", () => {
     localStorage.removeItem("loggedIn");
-    window.location.href = "login.html";
+    window.location.href = "library-login.html";
   });
 }
 
 // ====== LOGIN VALIDATION ======
-if (window.location.pathname.includes("dashboard.html")) {
+if (window.location.pathname.includes("library-login.html")) {
   if (localStorage.getItem("loggedIn") !== "true") {
-    window.location.href = "login.html";
+    window.location.href = "dashboard.html";
   } else {
     loadBooks();
   }

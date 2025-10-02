@@ -11,7 +11,7 @@ function login() {
       if (username === "admin" && password === "library123") {
         // store login session
         localStorage.setItem("isLibrarianLoggedIn", "true");
-        // redirect to dashboard
+        // // redirect to dashboard
         window.location.href = "dashboard.html";
       } else {
         output.textContent = "Invalid username or password.";
