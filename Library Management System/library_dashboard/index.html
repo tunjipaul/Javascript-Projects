@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Librarian Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
+</head>
+
+<body>
+    <div class="navbar">
+        <h2>Librarian Dashboard</h2>
+        <button class="logoutBtn">Logout</button>
+    </div>
+
+    <div class="container">
+        <h3>Add Book</h3>
+            <form id="bookForm">
+                <input type="text" id="title" placeholder="Book Title" required>
+                <input type="text" id="author" placeholder="Author" required>
+                <input type="number" id="year" placeholder="Year" required>
+                <select id="status">
+                    <option value="Available">Available</option>
+                    <option value="Checked Out">Checked Out</option>
+                </select>
+                <button type="submit" class="add_btn">Add Book</button>
+            </form>
+    </div>
+        <h3>Book List</h3>
+        <input type="text" id="searchInput" placeholder="Search by Title or Author...">
+        <table id="bookTable">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Year</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    
+</body>
+
+</html>
