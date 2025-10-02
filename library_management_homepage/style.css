@@ -1,0 +1,64 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #fff;
+    background: url('https://i.pinimg.com/1200x/f7/24/9a/f7249ad37f17039c1c05c1bf16e3eb4c.jpg');
+    height: 100vh;
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-attachment: fixed;
+    color: #fff;
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+}
+
+h1 {
+    padding-left: 30px;
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 18px; margin-bottom: 30px;
+}
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    margin: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+}
+
+.student-btn {
+    background: purple;
+    color: #eff5d2;
+}
+.student-btn:hover {
+    background: #ca31ca; 
+}
+
+.librarian-btn {
+    background: purple;
+    color: #eff5d2;
+}
+
+.librarian-btn:hover {
+    background: #ca31ca; 
+}

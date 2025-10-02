@@ -1,0 +1,90 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #fafdeb;
+    height: 50vh;
+}
+
+.container {
+    background-color: #eff5d2;
+    color: #000;
+    width: 500px;
+    justify-self: center;
+    align-items: center;
+    border-radius: 20px;
+    margin-top: 15%;
+    box-shadow:0 2px 6px #1e2831;
+}
+.container h1{
+    text-align: center;
+    color:#434e04;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+h2 {
+    padding-top: 20px;
+    padding-left: 25px;
+}
+
+.sign-in-form {
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.input-form {
+    padding-top: 25px;
+    padding-bottom: 12px;
+}
+
+.form {
+    font-size: 20px;
+    color: #000000;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.input {
+    width: 100%;
+    font-size: 18px;
+    padding-top: 16px;
+    padding-left: 10px;
+    padding-bottom: 16px;
+    border-radius: 8px;
+    border: 2px solid #ddd;
+    color: #000;
+}
+
+.Sign-in-notification {
+    text-align: center;
+    padding-bottom: 12px;
+}
+
+.sign-in-button {
+    width: 100%;
+    padding: 16px 28px;
+    margin-top: 0;
+    background-color: #c6d870;
+    color: #ffffff;
+    border: none;
+    border-radius: 30px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-bottom: 40px;
+    margin-top: 30px;
+}
+/* .sign-in-button a{
+    text-decoration: none;
+    color: #ffffff;
+    
+} */
+
+.sign-in-button:hover {
+    background-color: #8fa31e;
+}
+
