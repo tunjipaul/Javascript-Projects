@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sidebar demo</title>
+
+  <style>
+    :root{
+      --sidebar-width: 260px;
+      --sidebar-bg: #071a1d; /* dark */
+      --muted: #b7c7cb;
+      --accent: #21a7ff;     /* blue used for active item and button */
+      --pill: rgba(33,167,255,0.12);
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:Inter, "Segoe UI", Roboto, Arial; background:#f4f7f8; color:#0e2b33}
+
+    /* Layout wrapper so you can see the sidebar next to content */
+    .page {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* ---------------- Sidebar ---------------- */
+    .sidebar{
+      width: var(--sidebar-width);
+      background: var(--sidebar-bg);
+      color: #fff;
+      display: flex;
+      flex-direction: column;       /* stack h1, ul and button vertically */
+      padding: 28px 20px;
+      gap: 12px;
+    }
+
+    /* Top brand row (icon + title) */
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .brand .logo {
+      width: 34px;
+      height: 28px;
+      background: var(--accent);
+      border-radius: 4px;
+      flex-shrink: 0;
+      /* simple flag/shape placeholder - replace with svg as needed */
+      box-shadow: inset -6px 0 0 rgba(255,255,255,0.06);
+    }
+    .brand h1{
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.2px;
+      color: #fff;
+    }
+
+    /* The nav list: this is the important bit */
+    .menu {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      /* Make the menu occupy the remaining vertical space between brand and button */
+      flex: 1;            /* <-- expands to fill middle space */
+      margin-top: 8px;    /* slight gap below the brand (h1) */
+      overflow: auto;     /* allow scrolling if many items */
+    }
+
+    .menu li a{
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      transition: background .15s, color .15s;
+    }
+
+    /* small icon placeholder */
+    .menu .icon {
+      display: inline-grid;
+      place-items: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.03);
+      color: #9fd9ff;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .menu li a:hover{
+      background: rgba(255,255,255,0.03);
+      color: #eaf6ff;
+    }
+
+    /* Active/selected item */
+    .menu li.active a{
+      background: var(--pill);
+      color: #fff;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08) inset;
+    }
+
+    /* bottom button (pinned by flex layout because .menu has flex:1) */
+    .add-btn {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 12px 14px;
+      border-radius: 12px;
+      width: 100%;
+      font-weight: 700;
+      font-size: 15px;
+      cursor: pointer;
+      box-shadow: 0 6px 18px rgba(33,167,255,0.18);
+    }
+    .add-btn:active{ transform: translateY(1px) }
+
+    /* small visual content area to the right */
+    .content{
+      flex: 1;
+      padding: 40px;
+    }
+
+    /* Responsive tip: shrink sidebar on small screens */
+    @media (max-width: 720px){
+      .sidebar{ width: 220px; padding: 20px }
+      .brand h1{ font-size: 16px }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <aside class="sidebar">
+      <!-- top brand -->
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <h1>EduGrade Pro</h1>
+      </div>
+
+      <!-- menu: note the ul has flex:1 so it grows and pushes the button down -->
+      <ul class="menu" role="menu">
+        <li class="active"><a href="#"><span class="icon">🏠</span>Dashboard Home</a></li>
+        <li><a href="#"><span class="icon">👥</span>Students</a></li>
+        <li><a href="#"><span class="icon">⭐</span>Gradebook</a></li>
+        <li><a href="#"><span class="icon">📊</span>Reports</a></li>
+        <li><a href="#"><span class="icon">⚙️</span>Settings</a></li>
+        <li><a href="#"><span class="icon">❓</span>Help</a></li>
+      </ul>
+
+      <!-- pinned CTA at the bottom -->
+      <button class="add-btn">Add New Student</button>
+    </aside>
+
+    <main class="content">
+      <h2>Right-side content (demo)</h2>
+      <p>Sidebar layout demo — the menu grows and the button remains at the bottom.</p>
+    </main>
+  </div>
+</body>
+</html>

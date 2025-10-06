@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teacher DashBoard</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .general-container {
+        display: flex;
+        height: 100vh;
+      }
+
+      .side-bar {
+        background-color: #0d171b;
+        color: white;
+        display: flex;
+        padding: 30px;
+        flex-direction: column;
+        gap: 20px;
+        width: 290px;
+        justify-content: space-between;
+      }
+
+      .side-bar h1 {
+        margin-bottom: 20px;
+      }
+
+      
+
+      .side-bar h1 {
+        font-size: 1.5rem;
+      }
+
+      .side-bar ul {
+        list-style: none;
+        flex-grow: 1;
+      }
+
+      .side-bar ul li {
+        margin-bottom: 12px;
+        padding: 10px;
+        font-weight: 600;
+      }
+
+      .side-bar a {
+        color: white;
+        text-decoration: none;
+        font-size: 1rem;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+
+      .side-bar a:hover {
+        color: rgb(195, 202, 223);
+        
+      }
+      .side-bar ul li:first-child {
+        background-color: #13a4ec;
+        border-radius: 10px;
+        width: 100%;
+      }
+      .side-bar ul li:not(:first-child):hover {
+        background-color: #162229;
+        border-radius: 10px;
+      }
+
+      .side-bar button {
+        font-weight: 600;
+        background-color: #13a4ec;
+        font-size: 1rem;
+        border: none;
+        border-radius: 10px;
+        color: white;
+        padding: 15px;
+        width: 100%;
+      }
+      @media (max-width: 768px) {
+      .side-bar {
+        width: 70px;
+        padding: 20px 10px;
+        align-items: center;
+      }
+
+      .side-bar h1 {
+        font-size: 1rem;
+      }
+
+      .side-bar ul li {
+        padding: 10px;
+        text-align: center;
+      }
+
+      .side-bar ul li a {
+        flex-direction: column;
+        font-size: 0.75rem;
+        gap: 5px;
+      }
+
+      .side-bar button {
+        font-size: 0.8rem;
+        padding: 10px;
+      }
+    }
+
+      .main-container {
+        flex: 1;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="general-container">
+      <div class="side-bar">
+        <div class="second-content">
+          <h1>EduGrade Pro</h1>
+          <ul>
+            <li>
+              <a href="" target="_blank" rel="noopener noreferrer"
+                ><i class="fa-solid fa-house-user"></i>Dashboard Home</a
+              >
+            </li>
+            <li>
+              <a href="" target="_blank" rel="noopener noreferrer"
+                ><i class="fa-solid fa-users"></i>Students</a
+              >
+            </li>
+            <li>
+              <a href="" target="_blank" rel="noopener noreferrer"
+                ><i class="fa-regular fa-star"></i>Gradebook</a
+              >
+            </li>
+            <li>
+              <a href="" target="_blank" rel="noopener noreferrer"
+                ><i class="fa-solid fa-square-poll-vertical"></i>Reports</a
+              >
+            </li>
+            <li>
+              <a href="" target="_blank" rel="noopener noreferrer"
+                ><i class="fa-solid fa-gear"></i>Settings</a
+              >
+            </li>
+            <li>
+              <a href="" target="_blank" rel="noopener noreferrer"
+                ><i class="fa-solid fa-circle-question"></i>Help</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <a href="" target="_blank" rel="noopener noreferrer"
+          ><button>Add New Student</button></a
+        >
+      </div>
+      <div class="main-container"></div>
+    </div>
+  </body>
+</html>
