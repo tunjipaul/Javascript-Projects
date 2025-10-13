@@ -1,207 +1,323 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Teacher DashBoard</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
-    <style>
-      * {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teacher DashBoard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-      body {
-        font-family: Arial, Helvetica, sans-serif;
-      }
-
-      .general-container {
-        display: flex;
-        height: 100vh;
-      }
-
-      .side-bar {
-        background-color: #0d171b;
-        color: white;
-        display: flex;
-        padding: 30px;
-        flex-direction: column;
-        gap: 20px;
-        width: 390px;
-        justify-content: space-between;
-      }
-
-      .side-bar h1 {
-        margin-bottom: 20px;
-      }
-
-      
-
-      .side-bar h1 {
-        font-size: 1.5rem;
-      }
-
-      .side-bar ul {
-        list-style: none;
-        flex-grow: 1;
-      }
-
-      .side-bar ul li {
-        margin-bottom: 12px;
-        padding: 10px;
-        font-weight: 600;
-      }
-
-      .side-bar a {
-        color: white;
-        text-decoration: none;
-        font-size: 1rem;
-        display: flex;
-        gap: 10px;
-        align-items: center;
-      }
-
-      .side-bar a:hover {
-        color: rgb(195, 202, 223);
-        
-      }
-      .side-bar ul li:first-child {
-        background-color: #13a4ec;
-        border-radius: 10px;
-        width: 100%;
-      }
-      .side-bar ul li:not(:first-child):hover {
-        background-color: #162229;
-        border-radius: 10px;
-      }
-
-      .side-bar button {
-        font-weight: 600;
-        background-color: #13a4ec;
-        font-size: 1rem;
-        border: none;
-        border-radius: 10px;
-        color: white;
-        padding: 15px;
-        width: 100%;
-      }
-      @media (max-width: 768px) {
-      .side-bar {
-        width: 70px;
-        padding: 20px 10px;
-        align-items: center;
-      }
-
-      .side-bar h1 {
-        font-size: 1rem;
-      }
-
-      .side-bar ul li {
-        padding: 10px;
-        text-align: center;
-      }
-
-      .side-bar ul li a {
-        flex-direction: column;
-        font-size: 0.75rem;
-        gap: 5px;
-      }
-
-      .side-bar button {
-        font-size: 0.8rem;
-        padding: 10px;
-      }
-    }
-
-      .main-container {
-        flex: 1;
-      }
-      .nav-bar{
-        display: flex;
-        justify-content: space-between;
-        border: 2px solid red;
-        padding: 20px;
-      }
-      .nav-bar .second-child{
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
-      .nav-bar .second-child button{
-        padding: 10px;
-        border-radius: 10px;
-        border: none;
-        font-weight: 600;
-        font-size: 1rem;
-
-      }
-      .nav-bar .second-child a:last-of-type button {
-        background-color: #13a4ec;
-        color: azure;
-      }
-
-    </style>
-  </head>
-
-  <body>
-    <div class="general-container">
-      <div class="side-bar">
-        <div class="second-content">
-          <h1>EduGrade Pro</h1>
-          <ul>
-            <li>
-              <a href="" target="_blank" rel="noopener noreferrer"
-                ><i class="fa-solid fa-house-user"></i>Dashboard Home</a
-              >
-            </li>
-            <li>
-              <a href="" target="_blank" rel="noopener noreferrer"
-                ><i class="fa-solid fa-users"></i>Students</a
-              >
-            </li>
-            <li>
-              <a href="" target="_blank" rel="noopener noreferrer"
-                ><i class="fa-regular fa-star"></i>Gradebook</a
-              >
-            </li>
-            <li>
-              <a href="" target="_blank" rel="noopener noreferrer"
-                ><i class="fa-solid fa-square-poll-vertical"></i>Reports</a
-              >
-            </li>
-            <li>
-              <a href="" target="_blank" rel="noopener noreferrer"
-                ><i class="fa-solid fa-gear"></i>Settings</a
-              >
-            </li>
-            <li>
-              <a href="" target="_blank" rel="noopener noreferrer"
-                ><i class="fa-solid fa-circle-question"></i>Help</a
-              >
-            </li>
-          </ul>
-        </div>
-
-        <a href="" target="_blank" rel="noopener noreferrer"
-          ><button>Add New Student</button></a
-        >
+<body>
+  <div class="general-container">
+    <div class="displayAlert"></div>
+    <div class="side-bar">
+      <div class="second-content">
+        <h1>EduGrade Pro</h1>
+        <ul>
+          <li>
+            <a href="" rel="noopener noreferrer"><i class="fa-solid fa-house-user"></i>Dashboard
+              Home</a>
+          </li>
+          <li>
+            <a href=""  rel="noopener noreferrer"><i class="fa-solid fa-users"></i>Students</a>
+          </li>
+          <li>
+            <a href=""  rel="noopener noreferrer"><i class="fa-regular fa-star"></i>Gradebook</a>
+          </li>
+          <li>
+            <a href="" rel="noopener noreferrer"><i
+                class="fa-solid fa-square-poll-vertical"></i>Reports</a>
+          </li>
+          <li>
+            <a href=""  rel="noopener noreferrer"><i class="fa-solid fa-gear"></i>Settings</a>
+          </li>
+          <li>
+            <a href=""  rel="noopener noreferrer"><i class="fa-solid fa-circle-question"></i>Help</a>
+          </li>
+        </ul>
       </div>
-      <div class="main-container">
-        <nav class="nav-bar">
-            <div class="first-child">
-                <h1>Welcome, Ms. Johnson!</h1>
-            </div>
-            <div class="second-child">
-                <a href="" target="_blank" rel="noopener noreferrer"><button>View All Students</button></a>
-                <a href="" target="_blank" rel="noopener noreferrer"><button>Go to Gradebook</button></a>
-                <img src="https://i.pravatar.cc/40" alt="Profile" />
-            </div>
-        </nav>
+
+      <a href=""  rel="noopener noreferrer"><button>Add New Student</button></a>
+    </div>
+    <div class="main-container">
+      <nav class="nav-bar">
+        <div class="first-child">
+          <h1>Welcome, Ms. Johnson!</h1>
+        </div>
+        <div class="second-child">
+          <a href="" target="_blank" rel="noopener noreferrer"><button>View All Students</button></a>
+          <a href="" target="_blank" rel="noopener noreferrer"><button>Go to Gradebook</button></a>
+          <img src="https://i.pravatar.cc/40" alt="Profile" />
+        </div>
+      </nav>
+      <section>
+        <h2>Dashboard Overview</h2>
+        <div class="overview-cards">
+          <div class="total-students">
+            <h3>Total Students</h3>
+            <h3>150</h3>
+          </div>
+          <div class="active-classes">
+            <h3>Active Classes</h3>
+            <h3>3</h3>
+          </div>
+          <div class="average-grade">
+            <h3>Average Grade</h3>
+            <h3>B</h3>
+          </div>
+          <div>
+            <h3>Assignments Due</h3>
+            <h3>5</h3>
+          </div>
+        </div>
+      </section>
+      <aside>
+        <h2>Student Roster</h2>
+        <div class="toggle-classes">
+          <input type="search" name="search" id="search" placeholder="&#128269;Search students..." />
+          <button>All</button>
+          <button>SS1</button>
+          <button>SS2</button>
+          <button>SS3</button>
+        </div>
+      </aside>
+      <table>
+        <tr>
+          <th>STUDENT NAME</th>
+          <th class="studentId">STUDENT ID</th>
+          <th class="className">CLASS</th>
+          <th>ACTIONS</th>
+        </tr>
+        <tr>
+          <td>Alice Smith</td>
+          <td>S001</td>
+          <td>SS1</td>
+          <td>
+            <span><button><i class="fa-solid fa-eye"></i></button>
+              <button><i class="fa-solid fa-pen"></i></button>
+              <button><i class="fa-solid fa-trash-can"></i></button></span>
+          </td>
+        </tr>
+        <tr>
+          <td>John Doe</td>
+          <td>S002</td>
+          <td>SS1</td>
+          <td>
+            <span><button><i class="fa-solid fa-eye"></i></button>
+              <button><i class="fa-solid fa-pen"></i></button>
+              <button><i class="fa-solid fa-trash-can"></i></button></span>
+          </td>
+        </tr>
+        <tr>
+          <td>Bob Johnson</td>
+          <td>S003</td>
+          <td>SS2</td>
+          <td>
+            <span>
+              <button><i class="fa-solid fa-eye"></i></button><button><i class="fa-solid fa-pen"></i></button>
+              <button><i class="fa-solid fa-trash-can"></i></button></span>
+          </td>
+        </tr>
+        <tr>
+          <td>Jane Williams</td>
+          <td>S004</td>
+          <td>SS3</td>
+          <td>
+            <span>
+              <button><i class="fa-solid fa-eye"></i></button><button><i class="fa-solid fa-pen"></i></button>
+              <button><i class="fa-solid fa-trash-can"></i></button></span>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const table = document.querySelector('table');
+  const tbody = table.querySelector('tbody') || table;
+  const addBtn = document.querySelector('.side-bar button');
+  const searchInput = document.getElementById('search');
+  const classButtons = document.querySelectorAll('.toggle-classes button');
+
+  const overlay = document.createElement('div');
+  overlay.id = 'overlay';
+  Object.assign(overlay.style, {
+    display: 'none',
+    position: 'fixed',
+    top: 0, left: 0, width: '100%', height: '100%',
+    background: 'rgba(0,0,0,0.6)',
+    zIndex: 1000
+  });
+
+  const form = document.createElement('form');
+  form.id = 'addStudentForm';
+  form.innerHTML = `
+    <div style="background:white;padding:30px;border-radius:10px;width:300px;margin:10% auto;display:flex;flex-direction:column;gap:10px">
+      <h3 id="formTitle">Add Student</h3>
+      <input id="studentName" placeholder="Student Name" required />
+      <input id="studentId" placeholder="Student ID" required />
+      <input id="className" placeholder="Class (e.g., SS1)" required />
+      <div style="display:flex;justify-content:space-between;margin-top:10px;">
+        <button type="submit">Save</button>
+        <button type="button" id="cancelForm">Cancel</button>
       </div>
     </div>
-  </body>
+  `;
+  overlay.appendChild(form);
+  document.body.appendChild(overlay);
+
+  let editMode = null;
+  let activeClassFilter = 'All';
+
+  function openForm(studentRow = null) {
+    overlay.style.display = 'block';
+    if (studentRow) {
+      editMode = studentRow;
+      document.getElementById('formTitle').textContent = 'Edit Student';
+      document.getElementById('studentName').value = studentRow.cells[0].textContent;
+      document.getElementById('studentId').value = studentRow.cells[1].textContent;
+      document.getElementById('className').value = studentRow.cells[2].textContent;
+    } else {
+      editMode = null;
+      document.getElementById('formTitle').textContent = 'Add Student';
+      form.reset();
+    }
+  }
+
+  function closeForm() {
+    overlay.style.display = 'none';
+    form.reset();
+  }
+
+  addBtn.addEventListener('click', e => {
+    e.preventDefault();
+    openForm();
+  });
+
+  document.getElementById('cancelForm').addEventListener('click', closeForm);
+  overlay.addEventListener('click', e => {
+    if (e.target === overlay) closeForm();
+  });
+
+  function saveToStorage() {
+    const students = [];
+    tbody.querySelectorAll('tr').forEach(row => {
+      const cells = row.querySelectorAll('td');
+      if (cells.length >= 3) {
+        students.push({
+          name: cells[0].textContent,
+          id: cells[1].textContent,
+          className: cells[2].textContent
+        });
+      }
+    });
+    localStorage.setItem('students', JSON.stringify(students));
+  }
+
+  function loadFromStorage() {
+    const students = JSON.parse(localStorage.getItem('students') || '[]');
+    students.forEach(s => addRow(s.name, s.id, s.className));
+    applyFilters();
+  }
+
+  function addRow(name, id, className) {
+    const newRow = tbody.insertRow();
+    newRow.innerHTML = `
+      <td>${name}</td>
+      <td>${id}</td>
+      <td>${className}</td>
+      <td>
+        <span>
+          <button class="viewBtn" title="Toggle view"><i class="fa-solid fa-eye"></i></button>
+          <button class="editBtn" title="Edit"><i class="fa-solid fa-pen"></i></button>
+          <button class="deleteBtn" title="Delete"><i class="fa-solid fa-trash-can"></i></button>
+        </span>
+      </td>
+    `;
+  }
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const name = document.getElementById('studentName').value.trim();
+    const id = document.getElementById('studentId').value.trim();
+    const className = document.getElementById('className').value.trim();
+    if (!name || !id || !className) return alert('Please fill in all fields.');
+
+    if (editMode) {
+      editMode.cells[0].textContent = name;
+      editMode.cells[1].textContent = id;
+      editMode.cells[2].textContent = className;
+      editMode = null;
+    } else {
+      addRow(name, id, className);
+    }
+
+    saveToStorage();
+    applyFilters();
+    closeForm();
+  });
+
+  table.addEventListener('click', e => {
+    const btn = e.target.closest('button');
+    if (!btn) return;
+    const row = btn.closest('tr');
+
+    if (btn.classList.contains('editBtn')) {
+      openForm(row);
+    } else if (btn.classList.contains('deleteBtn')) {
+      if (confirm('Delete this student?')) {
+        row.remove();
+        saveToStorage();
+      }
+    } else if (btn.classList.contains('viewBtn')) {
+      const eyeIcon = btn.querySelector('i');
+      const isHidden = row.classList.toggle('hiddenRow');
+      if (isHidden) {
+        [...row.cells].forEach((cell, i) => { if (i < 3) cell.style.visibility = 'hidden'; });
+        eyeIcon.style.textDecoration = 'line-through';
+      } else {
+        [...row.cells].forEach((cell) => cell.style.visibility = 'visible');
+        eyeIcon.style.textDecoration = 'none';
+      }
+    }
+  });
+
+  function applyFilters() {
+    const q = (searchInput && searchInput.value || '').trim().toLowerCase();
+    tbody.querySelectorAll('tr').forEach(row => {
+      const cells = row.querySelectorAll('td');
+      if (cells.length < 3) return;
+      const name = cells[0].textContent.toLowerCase();
+      const className = cells[2].textContent;
+      const matchesName = name.includes(q);
+      const matchesClass = (activeClassFilter === 'All') || (className === activeClassFilter);
+      row.style.display = (matchesName && matchesClass) ? '' : 'none';
+    });
+  }
+
+  if (searchInput) {
+    searchInput.addEventListener('input', () => {
+      applyFilters();
+    });
+  }
+
+  classButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      activeClassFilter = btn.textContent.trim();
+      classButtons.forEach(b => b.classList.remove('active-filter'));
+      btn.classList.add('active-filter');
+      applyFilters();
+    });
+  });
+
+  loadFromStorage();
+});
+</script>
+
+</body>
+
 </html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher's Management Page</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Verdana, Geneva, Tahoma, sans-serif, sans-serif;
+        }
+        .general-container{
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .header{
+            background-color: #0d171b;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+        .header h1{
+            margin-bottom: 10px;
+        }
+        .logOut{
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px 15px;
+            background-color: #0d629b;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+            font-weight: 600;
+        }
+        .logOut:hover{
+            background-color: #2f89d3;
+            color: black;
+        }
+        .addBox{
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #f8fafc;
+        }
+        .addBox input[type="search"]{
+            padding: 10px;
+            width: 70%;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .addBtn{
+            padding: 10px 15px;
+            background-color: #0d629b;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+            font-weight: 600;
+        }
+        .addBtn:hover{
+            background-color: #2f89d3;
+            color: black;
+        }
+        .content{   
+            padding: 20px;
+            background-color: #f8fafc;
+            flex: 3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        .table-container{
+            width: 90%;
+            max-width: 1000px;
+        }
+        table{
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td{
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th{
+            background-color: #cde3e8;
+        }
+        tr:hover{
+            background-color: #ddd;
+        }
+        .footer{
+            background-color: #0d171b;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-weight: 600;
+        }
+        .action-btn{
+            padding: 5px 10px;
+            margin-right: 5px;
+            border: none;
+            cursor: pointer;
+            color: white;
+        }
+        .edit-btn{
+            background-color: #2196F3;
+        }
+        .edit-btn:hover{
+            background-color: #1976D2;
+        }
+        .delete-btn{
+            background-color: #f44336;
+        }
+        .delete-btn:hover{
+            background-color: #d32f2f;
+        }
+        @media (max-width: 600px){
+            .addBox{
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .addBox input[type="search"]{
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            .logOut{
+                position: static;
+                margin-top: 10px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="general-container">
+        <div class="header">
+            <h1>Teacher's Management Page</h1>
+            <p>Manage student records and enrollments</p>
+            <button class="logOut" id="logOut">Log Out</button>
+        </div>
+        <div class="addBox">
+            <input type="search" name="search" id="searchByName" placeholder="&#128269;search by student name...">
+            <button class="addBtn">Add New Student</button>
+        </div>
+
+
+
+        </div>
+        <div class="content">
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Student ID</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Grade Level</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="studentTableBody">
+                        <!-- Student rows will be populated here by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="footer">
+            <p>&copy; 2024 EduGrade Pro. All rights reserved.</p>
+        </div>
+
+    </div>
+    <script>
+        document.getElementById('logOut').addEventListener('click', function() {
+            // Redirect to login page or perform logout actions
+            window.location.href = 'login.html'; // Change this to your actual login page
+        });
+
+        // Sample data for demonstration
+        const students = [
+            { id: 1, firstName: 'John', lastName: 'Doe', gradeLevel: '10' },
+            { id: 2, firstName: 'Jane', lastName: 'Smith', gradeLevel: '11' },
+            { id: 3, firstName: 'Emily', lastName: 'Johnson', gradeLevel: '12' },
+            { id: 4, firstName: 'Michael', lastName: 'Brown', gradeLevel: '10' },
+            { id: 5, firstName: 'Sarah', lastName: 'Davis', gradeLevel: '11' }
+        ];
+
+        const studentTableBody = document.getElementById('studentTableBody');
+
+        function populateTable(data) {
+            studentTableBody.innerHTML = '';
+            data.forEach(student => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${student.id}</td>
+                    <td>${student.firstName}</td>
+                    <td>${student.lastName}</td>
+                    <td>${student.gradeLevel}</td>
+                    <td>
+                        <button class="action-btn edit-btn">Edit</button>
+                        <button class="action-btn delete-btn">Delete</button>
+                    </td>
+                `;
+                studentTableBody.appendChild(row);
+            });
+        }
+
+        // Initial population of the table
+        populateTable(students);
+
+        // Search functionality
+        document.getElementById('searchByName').addEventListener('input', function() {
+            const query = this.value.toLowerCase();
+            const filteredStudents = students.filter(student =>
+                student.firstName.toLowerCase().includes(query) ||
+                student.lastName.toLowerCase().includes(query)
+            );
+            populateTable(filteredStudents);
+        });
+
+    </script>
+
+</body>
+</html>
